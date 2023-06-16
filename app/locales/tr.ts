@@ -174,7 +174,7 @@ const tr: LocaleType = {
   },
   Store: {
     DefaultTopic: "Yeni Konuşma",
-    BotHello: "Merhaba! Size bugün nasıl yardımcı olabilirim?",
+    BotHello: "Xinxin tarafından ChatGPT web sitesi",
     Error: "Bir şeyler yanlış gitti. Lütfen daha sonra tekrar deneyiniz.",
     Prompt: {
       History: (content: string) =>

@@ -170,7 +170,7 @@ const vi: LocaleType = {
   },
   Store: {
     DefaultTopic: "Cuộc trò chuyện mới",
-    BotHello: "Xin chào! Mình có thể giúp gì cho bạn?",
+    BotHello: "Trang web ChatGPT bởi Xinxin",
     Error: "Có lỗi xảy ra, vui lòng thử lại sau.",
     Prompt: {
       History: (content: string) =>

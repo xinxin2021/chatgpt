@@ -21,14 +21,14 @@ export const DEFAULT_CONFIG = {
   avatar: "1f603",
   fontSize: 14,
   theme: Theme.Auto as Theme,
-  tightBorder: false,
-  sendPreviewBubble: true,
+  tightBorder: true,
+  sendPreviewBubble: false,
   sidebarWidth: 300,
   webSearch: false,
 
   disablePromptHint: false,
 
-  dontShowMaskSplashScreen: false, // dont show splash screen when create chat
+  dontShowMaskSplashScreen: true, // dont show splash screen when create chat
 
   modelConfig: {
     model: "gpt-3.5-turbo-0613" as ModelType,

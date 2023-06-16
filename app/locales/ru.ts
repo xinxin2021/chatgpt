@@ -173,7 +173,7 @@ const ru: LocaleType = {
   },
   Store: {
     DefaultTopic: "Новый разговор",
-    BotHello: "Здравствуйте! Как я могу вам помочь сегодня?",
+    BotHello: "Веб-сайт ChatGPT от Xinxin",
     Error: "Что-то пошло не так. Пожалуйста, попробуйте еще раз позже.",
     Prompt: {
       History: (content: string) =>

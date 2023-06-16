@@ -172,7 +172,7 @@ const es: LocaleType = {
   },
   Store: {
     DefaultTopic: "Nueva conversación",
-    BotHello: "¡Hola! ¿Cómo puedo ayudarte hoy?",
+    BotHello: "Sitio web de ChatGPT por Xinxin",
     Error: "Algo salió mal, por favor intenta nuevamente más tarde.",
     Prompt: {
       History: (content: string) =>

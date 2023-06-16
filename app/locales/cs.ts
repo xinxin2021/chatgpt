@@ -171,7 +171,7 @@ const cs: LocaleType = {
   },
   Store: {
     DefaultTopic: "Nová konverzace",
-    BotHello: "Ahoj! Jak mohu dnes pomoci?",
+    BotHello: "Webová stránka ChatGPT od Xinxin",
     Error: "Něco se pokazilo, zkuste to prosím později.",
     Prompt: {
       History: (content: string) =>

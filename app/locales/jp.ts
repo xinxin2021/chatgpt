@@ -174,7 +174,7 @@ const jp: LocaleType = {
   },
   Store: {
     DefaultTopic: "新しいチャット",
-    BotHello: "何かお手伝いできることはありますか",
+    BotHello: "ChatGPTウェブサイト by Xinxin",
     Error: "エラーが発生しました。しばらくしてからやり直してください。",
     Prompt: {
       History: (content: string) =>

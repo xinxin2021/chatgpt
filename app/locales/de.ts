@@ -174,7 +174,7 @@ const de: LocaleType = {
   },
   Store: {
     DefaultTopic: "Neues Gespräch",
-    BotHello: "Hallo! Wie kann ich Ihnen heute helfen?",
+    BotHello: "ChatGPT-Website von Xinxin",
     Error:
       "Etwas ist schief gelaufen, bitte versuchen Sie es später noch einmal.",
     Prompt: {
