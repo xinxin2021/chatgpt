@@ -170,7 +170,7 @@ const cn = {
   },
   Store: {
     DefaultTopic: "新的聊天",
-    BotHello: "ChatGPT 站点 by Xinxin",
+    BotHello: "ChatGPT 站点 by Xinxin<br>两个站点使用同一仓库，提示语无法分别显示，请见谅。<br>如果您正处于备用站点：<br>此站点仅供个人使用，请前往[免费体验站点](https://free.gpt.xinxin2021.tk)。<br>如果您正处于免费体验站点：<br>本服务基于由 [Hk-Gosuto](https://github.com/Hk-Gosuto) 大佬改编的由 [Yidadaa](https://github.com/Yidadaa) 制作的 [ChatGPT-Next-Web](https://github.com/Hk-Gosuto/ChatGPT-Next-Web) ，比原版多了联网功能。<br>我舍不得买大佬的多 key 教程，因此用了 [pengzhile](https://github.com/pengzhile) 大佬的 Share Token 和 Pool Token ，理论最多可以供 6 人同时使用。<br>转载的 OpenAI 账号及密码：<br>j.ale.ig.h.jphh.d.p97.10.9@gmail.com / qw2RuYz$tg1<br>s.ne.edi.dh.e99.3.20.9@gmail.com / srd5YFrw2*ch0<br>co.b.b.fawo.yj0.04.469@gmail.com / @uyHSzEEXZaz<br>stil.tn.er.jygo36.4.1@gmail.com / d%AMmeZpvNt<br>cob.bfa.woy.j.0.0.4.469@gmail.com / RQc!areDgNU<br>j.a.l.eig.h.jphh.dp97.1.0.9@gmail.com / 9H^Ez1b0wCB<br>转载的 OpenAI API Key ：<br>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 / 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 / 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 / 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 / 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 / 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",
     Error: "出错了，稍后重试吧",
     Prompt: {
       History: (content: string) =>

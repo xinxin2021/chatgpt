@@ -174,7 +174,7 @@ const jp: LocaleType = {
   },
   Store: {
     DefaultTopic: "新しいチャット",
-    BotHello: "ChatGPTウェブサイト by Xinxin",
+    BotHello: "ChatGPTウェブサイト by Xinxin<br>両方のウェブサイトは同じリポジトリを使用していますので、メッセージを個別に表示することはできません。ご了承ください。<br>バックアップサイトにいる場合：<br>このサイトは個人利用のみです。[無料体験サイト](https://free.gpt.xinxin2021.tk/にアクセスしてください。<br>無料体験サイトにいる場合：<br>このサービスは[Hk-Gosuto](https://github.com/Hk-Gosuto)によって改変された[ChatGPT-Next-Web](https://github.com/Hk-Gosuto/ChatGPT-Next-Web)をベースにしており、[Yidadaa](https://github.com/Yidadaa)によって作成されました。オリジナルのバージョンよりもオンライン機能が追加されています。<br>私はマスターのマルチキーガイドを購入する余裕がありませんので、[pengzhile](https://github.com/pengzhile)のシェアトークンとプールトークンを使用しました。理論上は最大で6人が同時に利用できます。<br>再現されたOpenAIのアカウントとパスワード：<br>j.ale.ig.h.jphh.d.p97.10.9@gmail.com / qw2RuYz$tg1<br>s.ne.edi.dh.e99.3.20.9@gmail.com / srd5YFrw2*ch0<br>co.b.b.fawo.yj0.04.469@gmail.com / @uyHSzEEXZaz<br>stil.tn.er.jygo36.4.1@gmail.com / d%AMmeZpvNt<br>cob.bfa.woy.j.0.0.4.469@gmail.com / RQc!areDgNU<br>j.a.l.eig.h.jphh.dp97.1.0.9@gmail.com / 9H^Ez1b0wCB<br>再現されたOpenAIのAPIキー：<br>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 / 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 / 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 / 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 / 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 / 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",
     Error: "エラーが発生しました。しばらくしてからやり直してください。",
     Prompt: {
       History: (content: string) =>
