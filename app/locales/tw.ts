@@ -1,7 +1,7 @@
 import { SubmitKey } from "../store/config";
-import type { LocaleType } from "./index";
+import type { PartialLocaleType } from "./index";
 
-const tw: LocaleType = {
+const tw: PartialLocaleType = {
   WIP: "該功能仍在開發中……",
   Error: {
     Unauthorized: "目前您的狀態是未授權，請前往設定頁面輸入授權碼。",
@@ -59,34 +59,19 @@ const tw: LocaleType = {
   Settings: {
     Title: "設定",
     SubTitle: "設定選項",
-    Actions: {
-      ClearAll: "清除所有資料",
-      ResetAll: "重設所有設定",
-      Close: "關閉",
-      ConfirmResetAll: "您確定要重設所有設定嗎？",
-      ConfirmClearAll: "您確定要清除所有数据嗎？",
-    },
+
     Lang: {
       Name: "Language", // ATTENTION: if you wanna add a new translation, please do not translate this value, leave it as `Language`
       All: "所有语言",
-      Options: {
-        cn: "简体中文",
-        en: "English",
-        tw: "繁體中文",
-        es: "Español",
-        it: "Italiano",
-        tr: "Türkçe",
-        jp: "日本語",
-        de: "Deutsch",
-        vi: "Vietnamese",
-        ru: "Русский",
-        cs: "Čeština",
-      },
     },
     Avatar: "大頭貼",
     FontSize: {
       Title: "字型大小",
       SubTitle: "聊天內容的字型大小",
+    },
+    InjectSystemPrompts: {
+      Title: "注入系統提示",
+      SubTitle: "強制在每個請求的訊息列表開頭添加一個模擬 ChatGPT 的系統提示",
     },
     Update: {
       Version: (x: string) => `當前版本：${x}`,
@@ -104,8 +89,10 @@ const tw: LocaleType = {
       SubTitle: "在预览气泡中预览 Markdown 内容",
     },
     Mask: {
-      Title: "面具启动页",
-      SubTitle: "新建聊天时，展示面具启动页",
+      Splash: {
+        Title: "面具启动页",
+        SubTitle: "新建聊天时，展示面具启动页",
+      },
     },
     Prompt: {
       Disable: {
@@ -161,14 +148,18 @@ const tw: LocaleType = {
       Title: "單次回應限制 (max_tokens)",
       SubTitle: "單次互動所用的最大 Token 數",
     },
-    PresencePenlty: {
+    PresencePenalty: {
       Title: "話題新穎度 (presence_penalty)",
       SubTitle: "值越大，越有可能擴展到新話題",
+    },
+    FrequencyPenalty: {
+      Title: "頻率懲罰度 (frequency_penalty)",
+      SubTitle: "值越大，越有可能降低重複字詞",
     },
   },
   Store: {
     DefaultTopic: "新的對話",
-    BotHello: "ChatGPT 網站由 Xinxin 提供<br>兩個站點共用同一個儲存庫，所以無法分別顯示提示語，敬請諒解。<br>如果您正在使用備用站點：<br>該站點僅供個人使用，請前往免費體驗站點。<br>如果您正在使用免費體驗站點：<br>此服務基於由[Hk-Gosuto](https://github.com/Hk-Gosuto)大佬改編的由[Yidadaa](https://github.com/Yidadaa)製作的[ChatGPT-Next-Web](https://github.com/Hk-Gosuto/ChatGPT-Next-Web)，相較原版多了聯網功能。<br>我舍不得買大佬的多 key 教程，因此用了 [pengzhile](https://github.com/pengzhile) 大佬的Share Token和Pool Token，理論上最多可以供6人同時使用。<br>轉載的OpenAI帳號及密碼：<br>j.ale.ig.h.jphh.d.p97.10.9@gmail.com / qw2RuYz$tg1<br>s.ne.edi.dh.e99.3.20.9@gmail.com / srd5YFrw2*ch0<br>co.b.b.fawo.yj0.04.469@gmail.com / @uyHSzEEXZaz<br>stil.tn.er.jygo36.4.1@gmail.com / d%AMmeZpvNt<br>cob.bfa.woy.j.0.0.4.469@gmail.com / RQc!areDgNU<br>j.a.l.eig.h.jphh.dp97.1.0.9@gmail.com / 9H^Ez1b0wCB<br>轉載的OpenAI API金鑰：<br>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 / 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 / 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 / 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 / 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 / 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",
+    BotHello: "請問需要我的協助嗎？",
     Error: "出錯了，請稍後再嘗試",
     Prompt: {
       History: (content: string) =>
@@ -231,6 +222,12 @@ const tw: LocaleType = {
     Close: "关闭",
     Create: "新建",
     Edit: "编辑",
+  },
+  Exporter: {
+    Model: "模型",
+    Messages: "消息",
+    Topic: "主題",
+    Time: "時間",
   },
 };
 

@@ -1,17 +1,31 @@
 import { SubmitKey } from "../store/config";
-import type { LocaleType } from "./index";
+import { LocaleType } from "./index";
 
+// if you are adding a new translation, please use PartialLocaleType instead of LocaleType
 const en: LocaleType = {
   WIP: "Coming Soon...",
   Error: {
     Unauthorized:
-      "Unauthorized access, please enter access code in settings page.",
+      "Unauthorized access, please enter access code in [auth](/#/auth) page.",
+  },
+  Auth: {
+    Title: "Need Access Code",
+    Tips: "Please enter access code below",
+    Input: "access code",
+    Confirm: "Confirm",
+    Later: "Later",
   },
   ChatItem: {
     ChatItemCount: (count: number) => `${count} messages`,
   },
   Chat: {
-    SubTitle: (count: number) => `${count} messages with ChatGPT`,
+    SubTitle: (count: number) => `${count} messages`,
+    EditMessage: {
+      Topic: {
+        Title: "Topic",
+        SubTitle: "Change the current topic",
+      },
+    },
     Actions: {
       ChatList: "Go To Chat List",
       CompressedHistory: "Compressed History Memory Prompt",
@@ -19,7 +33,34 @@ const en: LocaleType = {
       Copy: "Copy",
       Stop: "Stop",
       Retry: "Retry",
+      Pin: "Pin",
+      PinToastContent: "Pinned 1 messages to contextual prompts",
+      PinToastAction: "View",
       Delete: "Delete",
+      Edit: "Edit",
+    },
+    Commands: {
+      new: "Start a new chat",
+      newm: "Start a new chat with mask",
+      next: "Next Chat",
+      prev: "Previous Chat",
+      clear: "Clear Context",
+      del: "Delete Chat",
+    },
+    InputActions: {
+      Stop: "Stop",
+      ToBottom: "To Latest",
+      Theme: {
+        auto: "Auto",
+        light: "Light Theme",
+        dark: "Dark Theme",
+      },
+      Prompt: "Prompts",
+      Masks: "Masks",
+      Clear: "Clear Context",
+      Settings: "Settings",
+      OpenTools: "Enable Plugins",
+      CloseTools: "Disable Plugins",
     },
     Rename: "Rename Chat",
     Typing: "Typing…",
@@ -28,20 +69,44 @@ const en: LocaleType = {
       if (submitKey === String(SubmitKey.Enter)) {
         inputHints += ", Shift + Enter to wrap";
       }
-      return inputHints + ", / to search prompts";
+      return inputHints + ", / to search prompts, : to use commands";
     },
     Send: "Send",
     Config: {
       Reset: "Reset to Default",
       SaveAs: "Save as Mask",
     },
+    IsContext: "Contextual Prompt",
   },
   Export: {
-    Title: "All Messages",
+    Title: "Export Messages",
     Copy: "Copy All",
     Download: "Download",
     MessageFromYou: "Message From You",
     MessageFromChatGPT: "Message From ChatGPT",
+    Share: "Share to ShareGPT",
+    Format: {
+      Title: "Export Format",
+      SubTitle: "Markdown or PNG Image",
+    },
+    IncludeContext: {
+      Title: "Including Context",
+      SubTitle: "Export context prompts in mask or not",
+    },
+    Steps: {
+      Select: "Select",
+      Preview: "Preview",
+    },
+    Image: {
+      Toast: "Capturing Image...",
+      Modal: "Long press or right click to save image",
+    },
+  },
+  Select: {
+    Search: "Search",
+    All: "Select All",
+    Latest: "Select Latest",
+    Clear: "Clear",
   },
   Memory: {
     Title: "Memory Prompt",
@@ -61,35 +126,38 @@ const en: LocaleType = {
   Settings: {
     Title: "Settings",
     SubTitle: "All Settings",
-    Actions: {
-      ClearAll: "Clear All Data",
-      ResetAll: "Reset All Settings",
-      Close: "Close",
-      ConfirmResetAll: "Are you sure you want to reset all configurations?",
-      ConfirmClearAll: "Are you sure you want to reset all data?",
+    Danger: {
+      Reset: {
+        Title: "Reset All Settings",
+        SubTitle: "Reset all setting items to default",
+        Action: "Reset",
+        Confirm: "Confirm to reset all settings to default?",
+      },
+      Clear: {
+        Title: "Clear All Data",
+        SubTitle: "Clear all messages and settings",
+        Action: "Clear",
+        Confirm: "Confirm to clear all messages and settings?",
+      },
     },
     Lang: {
       Name: "Language", // ATTENTION: if you wanna add a new translation, please do not translate this value, leave it as `Language`
       All: "All Languages",
-      Options: {
-        cn: "简体中文",
-        en: "English",
-        tw: "繁體中文",
-        es: "Español",
-        it: "Italiano",
-        tr: "Türkçe",
-        jp: "日本語",
-        de: "Deutsch",
-        vi: "Vietnamese",
-        ru: "Русский",
-        cs: "Čeština",
-      },
     },
     Avatar: "Avatar",
     FontSize: {
       Title: "Font Size",
       SubTitle: "Adjust font size of chat content",
     },
+    InjectSystemPrompts: {
+      Title: "Inject System Prompts",
+      SubTitle: "Inject a global system prompt for every request",
+    },
+    InputTemplate: {
+      Title: "Input Template",
+      SubTitle: "Newest message will be filled to this template",
+    },
+
     Update: {
       Version: (x: string) => `Version: ${x}`,
       IsLatest: "Latest version",
@@ -106,8 +174,14 @@ const en: LocaleType = {
       SubTitle: "Preview markdown in bubble",
     },
     Mask: {
-      Title: "Mask Splash Screen",
-      SubTitle: "Show a mask splash screen before starting new chat",
+      Splash: {
+        Title: "Mask Splash Screen",
+        SubTitle: "Show a mask splash screen before starting new chat",
+      },
+      Builtin: {
+        Title: "Hide Builtin Masks",
+        SubTitle: "Hide builtin masks in mask list",
+      },
     },
     Prompt: {
       Disable: {
@@ -155,33 +229,49 @@ const en: LocaleType = {
       SubTitle: "Access control enabled",
       Placeholder: "Need Access Code",
     },
+    Endpoint: {
+      Title: "Endpoint",
+      SubTitle: "Custom endpoint must start with http(s)://",
+    },
+    CustomModel: {
+      Title: "Custom Models",
+      SubTitle: "Add extra model options, separate by comma",
+    },
     Model: "Model",
     Temperature: {
       Title: "Temperature",
       SubTitle: "A larger value makes the more random output",
     },
+    TopP: {
+      Title: "Top P",
+      SubTitle: "Do not alter this value together with temperature",
+    },
     MaxTokens: {
       Title: "Max Tokens",
       SubTitle: "Maximum length of input tokens and generated tokens",
     },
-    PresencePenlty: {
+    PresencePenalty: {
       Title: "Presence Penalty",
       SubTitle:
         "A larger value increases the likelihood to talk about new topics",
     },
+    FrequencyPenalty: {
+      Title: "Frequency Penalty",
+      SubTitle:
+        "A larger value decreasing the likelihood to repeat the same line",
+    },
   },
   Store: {
     DefaultTopic: "New Conversation",
-    BotHello: "ChatGPT website by Xinxin<br>Both websites use the same repository, so the prompts cannot be displayed separately, please understand.<br>If you are currently on the backup site:<br>This site is for personal use only, please go to the [Free Trial Site](https://free.gpt.xinxin2021.tk).<br>If you are currently on the free trial site:<br>This service is based on [ChatGPT-Next-Web](https://github.com/Hk-Gosuto/ChatGPT-Next-Web) adapted by [Hk-Gosuto](https://github.com/Hk-Gosuto) and developed by [Yidadaa](https://github.com/Yidadaa). It has additional online functionality compared to the original version.<br>I can't afford to buy the tutorial for multiple keys from the great master, so I used the Share Token and Pool Token from [pengzhile](https://github.com/pengzhile) to allow a theoretical maximum of 6 people to use it simultaneously.<br>Reprinted OpenAI accounts and passwords:<br>j.ale.ig.h.jphh.d.p97.10.9@gmail.com / qw2RuYz$tg1<br>s.ne.edi.dh.e99.3.20.9@gmail.com / srd5YFrw2*ch0<br>co.b.b.fawo.yj0.04.469@gmail.com / @uyHSzEEXZaz<br>stil.tn.er.jygo36.4.1@gmail.com / d%AMmeZpvNt<br>cob.bfa.woy.j.0.0.4.469@gmail.com / RQc!areDgNU<br>j.a.l.eig.h.jphh.dp97.1.0.9@gmail.com / 9H^Ez1b0wCB<br>Reprinted OpenAI API Key:<br>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 / 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 / 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 / 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 / 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 / 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",
+    BotHello: "Hello! How can I assist you today?",
     Error: "Something went wrong, please try again later.",
     Prompt: {
       History: (content: string) =>
-        "This is a summary of the chat history between the AI and the user as a recap: " +
-        content,
+        "This is a summary of the chat history as a recap: " + content,
       Topic:
         "Please generate a four to five word title summarizing our conversation without any lead-in, punctuation, quotation marks, periods, symbols, or additional text. Remove enclosing quotation marks.",
       Summarize:
-        "Summarize our discussion briefly in 200 words or less to use as a prompt for future context.",
+        "Summarize the discussion briefly in 200 words or less to use as a prompt for future context.",
     },
   },
   Copy: {
@@ -190,8 +280,10 @@ const en: LocaleType = {
   },
   Context: {
     Toast: (x: any) => `With ${x} contextual prompts`,
-    Edit: "Contextual and Memory Prompts",
+    Edit: "Current Chat Settings",
     Add: "Add a Prompt",
+    Clear: "Context Cleared",
+    Revert: "Revert",
   },
   Plugin: {
     Name: "Plugin",
@@ -221,15 +313,29 @@ const en: LocaleType = {
     Config: {
       Avatar: "Bot Avatar",
       Name: "Bot Name",
+      Sync: {
+        Title: "Use Global Config",
+        SubTitle: "Use global config in this chat",
+        Confirm: "Confirm to override custom config with global config?",
+      },
+      HideContext: {
+        Title: "Hide Context Prompts",
+        SubTitle: "Do not show in-context prompts in chat",
+      },
+      Share: {
+        Title: "Share This Mask",
+        SubTitle: "Generate a link to this mask",
+        Action: "Copy Link",
+      },
     },
   },
   NewChat: {
     Return: "Return",
-    Skip: "Skip",
+    Skip: "Just Start",
     Title: "Pick a Mask",
     SubTitle: "Chat with the Soul behind the Mask",
     More: "Find More",
-    NotShow: "Not Show Again",
+    NotShow: "Never Show Again",
     ConfirmNoShow: "Confirm to disable？You can enable it in settings later.",
   },
 
@@ -239,6 +345,17 @@ const en: LocaleType = {
     Close: "Close",
     Create: "Create",
     Edit: "Edit",
+  },
+  Exporter: {
+    Model: "Model",
+    Messages: "Messages",
+    Topic: "Topic",
+    Time: "Time",
+  },
+
+  URLCommand: {
+    Code: "Detected access code from url, confirm to apply? ",
+    Settings: "Detected settings from url, confirm to apply?",
   },
 };
 

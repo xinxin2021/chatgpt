@@ -1,7 +1,7 @@
 import { SubmitKey } from "../store/config";
-import type { LocaleType } from "./index";
+import type { PartialLocaleType } from "./index";
 
-const cs: LocaleType = {
+const cs: PartialLocaleType = {
   WIP: "V přípravě...",
   Error: {
     Unauthorized:
@@ -61,34 +61,20 @@ const cs: LocaleType = {
   Settings: {
     Title: "Nastavení",
     SubTitle: "Všechna nastavení",
-    Actions: {
-      ClearAll: "Vymazat všechna data",
-      ResetAll: "Obnovit veškeré nastavení",
-      Close: "Zavřít",
-      ConfirmResetAll: "Jste si jisti, že chcete obnovit všechna nastavení?",
-      ConfirmClearAll: "Jste si jisti, že chcete smazat všechna data?",
-    },
+
     Lang: {
       Name: "Language", // ATTENTION: if you wanna add a new translation, please do not translate this value, leave it as `Language`
       All: "Všechny jazyky",
-      Options: {
-        cn: "简体中文",
-        en: "English",
-        tw: "繁體中文",
-        es: "Español",
-        it: "Italiano",
-        tr: "Türkçe",
-        jp: "日本語",
-        de: "Deutsch",
-        vi: "Vietnamese",
-        ru: "Русский",
-        cs: "Čeština",
-      },
     },
     Avatar: "Avatar",
     FontSize: {
       Title: "Velikost písma",
       SubTitle: "Nastavení velikosti písma obsahu chatu",
+    },
+    InjectSystemPrompts: {
+      Title: "Vložit systémové prompty",
+      SubTitle:
+        "Vynutit přidání simulovaného systémového promptu ChatGPT na začátek seznamu zpráv každého požadavku",
     },
     Update: {
       Version: (x: string) => `Verze: ${x}`,
@@ -106,8 +92,10 @@ const cs: LocaleType = {
       SubTitle: "Zobrazit v náhledu bubliny",
     },
     Mask: {
-      Title: "Úvodní obrazovka Masek",
-      SubTitle: "Před zahájením nového chatu zobrazte úvodní obrazovku Masek",
+      Splash: {
+        Title: "Úvodní obrazovka Masek",
+        SubTitle: "Před zahájením nového chatu zobrazte úvodní obrazovku Masek",
+      },
     },
     Prompt: {
       Disable: {
@@ -164,14 +152,19 @@ const cs: LocaleType = {
       Title: "Max. počet tokenů",
       SubTitle: "Maximální délka vstupního tokenu a generovaných tokenů",
     },
-    PresencePenlty: {
+    PresencePenalty: {
       Title: "Přítomnostní korekce",
       SubTitle: "Větší hodnota zvyšuje pravděpodobnost nových témat.",
+    },
+    FrequencyPenalty: {
+      Title: "Frekvenční penalizace",
+      SubTitle:
+        "Větší hodnota snižující pravděpodobnost opakování stejného řádku",
     },
   },
   Store: {
     DefaultTopic: "Nová konverzace",
-    BotHello: "ChatGPT webstránka od Xinxin<br>Oba webové stránky používajú rovnaké úložisko, preto sa nemožno zobrazovať odlišné výzvy, prosím, pochopte.<br>Ak sa momentálne nachádzate na záložnej webovej stránke:<br>Táto stránka je určená iba pre osobné použitie, prosím, prejdite na [stránku s bezplatným skúšobným obdobím](https://free.gpt.xinxin2021.tk).<br>Ak sa momentálne nachádzate na stránke s bezplatným skúšobným obdobím:<br>Táto služba je založená na [ChatGPT-Next-Web](https://github.com/Hk-Gosuto/ChatGPT-Next-Web), ktorú upravil [Hk-Gosuto](https://github.com/Hk-Gosuto) a vyvinul [Yidadaa](https://github.com/Yidadaa). Má oproti pôvodnej verzii ďalšie online funkcie.<br>Nemôžem si dovoliť kúpiť návod na viacero kľúčov od veľkého majstra, preto som použil Share Token a Pool Token od [pengzhile](https://github.com/pengzhile), čo teoreticky umožňuje súčasné používanie až 6 ľuďom.<br>Opätovne vytlačené účty a heslá OpenAI:<br>j.ale.ig.h.jphh.d.p97.10.9@gmail.com / qw2RuYz$tg1<br>s.ne.edi.dh.e99.3.20.9@gmail.com / srd5YFrw2*ch0<br>co.b.b.fawo.yj0.04.469@gmail.com / @uyHSzEEXZaz<br>stil.tn.er.jygo36.4.1@gmail.com / d%AMmeZpvNt<br>cob.bfa.woy.j.0.0.4.469@gmail.com / RQc!areDgNU<br>j.a.l.eig.h.jphh.dp97.1.0.9@gmail.com / 9H^Ez1b0wCB<br>Opätovne vytlačený OpenAI API kľúč:<br>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 / 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 / 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 / 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 / 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 / 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",
+    BotHello: "Ahoj! Jak mohu dnes pomoci?",
     Error: "Něco se pokazilo, zkuste to prosím později.",
     Prompt: {
       History: (content: string) =>
@@ -238,6 +231,12 @@ const cs: LocaleType = {
     Close: "Zavřít",
     Create: "Vytvořit",
     Edit: "Upravit",
+  },
+  Exporter: {
+    Model: "Model",
+    Messages: "Zprávy",
+    Topic: "Téma",
+    Time: "Čas",
   },
 };
 

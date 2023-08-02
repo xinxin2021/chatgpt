@@ -1,7 +1,7 @@
 import { SubmitKey } from "../store/config";
-import type { LocaleType } from "./index";
+import type { PartialLocaleType } from "./index";
 
-const tr: LocaleType = {
+const tr: PartialLocaleType = {
   WIP: "Çalışma devam ediyor...",
   Error: {
     Unauthorized:
@@ -61,34 +61,20 @@ const tr: LocaleType = {
   Settings: {
     Title: "Ayarlar",
     SubTitle: "Tüm Ayarlar",
-    Actions: {
-      ClearAll: "Tüm Verileri Temizle",
-      ResetAll: "Tüm Ayarları Sıfırla",
-      Close: "Kapat",
-      ConfirmResetAll: "Tüm ayarları sıfırlamak istediğinizden emin misiniz?",
-      ConfirmClearAll: "Tüm sohbeti sıfırlamak istediğinizden emin misiniz?",
-    },
+
     Lang: {
       Name: "Language", // ATTENTION: if you wanna add a new translation, please do not translate this value, leave it as `Language`
       All: "Tüm Diller",
-      Options: {
-        cn: "简体中文",
-        en: "English",
-        tw: "繁體中文",
-        es: "Español",
-        it: "Italiano",
-        tr: "Türkçe",
-        jp: "日本語",
-        de: "Deutsch",
-        vi: "Vietnamese",
-        ru: "Русский",
-        cs: "Čeština",
-      },
     },
     Avatar: "Avatar",
     FontSize: {
       Title: "Yazı Boyutu",
       SubTitle: "Sohbet içeriğinin yazı boyutunu ayarlayın",
+    },
+    InjectSystemPrompts: {
+      Title: "Sistem İpucu Ekleyin",
+      SubTitle:
+        "Her istek için ileti listesinin başına simüle edilmiş bir ChatGPT sistem ipucu ekleyin",
     },
     Update: {
       Version: (x: string) => `Sürüm: ${x}`,
@@ -106,8 +92,10 @@ const tr: LocaleType = {
       SubTitle: "Preview markdown in bubble",
     },
     Mask: {
-      Title: "Mask Splash Screen",
-      SubTitle: "Show a mask splash screen before starting new chat",
+      Splash: {
+        Title: "Mask Splash Screen",
+        SubTitle: "Show a mask splash screen before starting new chat",
+      },
     },
     Prompt: {
       Disable: {
@@ -166,15 +154,20 @@ const tr: LocaleType = {
       SubTitle:
         "Girdi belirteçlerinin ve oluşturulan belirteçlerin maksimum uzunluğu",
     },
-    PresencePenlty: {
+    PresencePenalty: {
       Title: "Varlık Cezası",
       SubTitle:
         "Daha büyük bir değer, yeni konular hakkında konuşma olasılığını artırır",
     },
+    FrequencyPenalty: {
+      Title: "Frekans Cezası",
+      SubTitle:
+        "Aynı satırı tekrar etme olasılığını azaltan daha büyük bir değer",
+    },
   },
   Store: {
     DefaultTopic: "Yeni Konuşma",
-    BotHello: "ChatGPT Xinxin tarafından yapılan bir web sitesi<br>Her iki site de aynı depoyu kullanıyor, bu yüzden mesajları ayrı ayrı göstermek mümkün değil. Lütfen anlayış gösterin.<br>Eğer yedek site üzerindeyseniz:<br>Bu site sadece kişisel kullanım içindir. Lütfen [ücretsiz deneme sitesine](https://free.gpt.xinxin2021.tk) gidin.<br>Eğer ücretsiz deneme sitesindeyseniz:<br>Bu hizmet [Hk-Gosuto](https://github.com/Hk-Gosuto) tarafından değiştirilmiş ve [Yidadaa](https://github.com/Yidadaa) tarafından oluşturulmuş olan [ChatGPT-Next-Web](https://github.com/Hk-Gosuto/ChatGPT-Next-Web) üzerine dayanmaktadır ve orijinal sürümden daha fazla çevrimiçi özelliğe sahiptir.<br>Birkaç anahtarlı ustalık dersini satın almaya gücüm yetmediğinden, [pengzhile](https://github.com/pengzhile)'nin Paylaşım Jetonu ve Havuz Jetonu kullanarak bu hizmeti sağlıyorum. Teorik olarak, en fazla 6 kişi aynı anda kullanabilir.<br>OpenAI hesapları ve şifreleri aktarıldı:<br>j.ale.ig.h.jphh.d.p97.10.9@gmail.com / qw2RuYz$tg1<br>s.ne.edi.dh.e99.3.20.9@gmail.com / srd5YFrw2*ch0<br>co.b.b.fawo.yj0.04.469@gmail.com / @uyHSzEEXZaz<br>stil.tn.er.jygo36.4.1@gmail.com / d%AMmeZpvNt<br>cob.bfa.woy.j.0.0.4.469@gmail.com / RQc!areDgNU<br>j.a.l.eig.h.jphh.dp97.1.0.9@gmail.com / 9H^Ez1b0wCB<br>OpenAI API Anahtarları aktarıldı:<br>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 / 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 / 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 / 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 / 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 / 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",
+    BotHello: "Merhaba! Size bugün nasıl yardımcı olabilirim?",
     Error: "Bir şeyler yanlış gitti. Lütfen daha sonra tekrar deneyiniz.",
     Prompt: {
       History: (content: string) =>
@@ -241,6 +234,12 @@ const tr: LocaleType = {
     Close: "Close",
     Create: "Create",
     Edit: "Edit",
+  },
+  Exporter: {
+    Model: "Model",
+    Messages: "Mesajlar",
+    Topic: "Konu",
+    Time: "Zaman",
   },
 };
 

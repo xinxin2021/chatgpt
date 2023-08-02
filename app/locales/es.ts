@@ -1,7 +1,7 @@
 import { SubmitKey } from "../store/config";
-import type { LocaleType } from "./index";
+import type { PartialLocaleType } from "./index";
 
-const es: LocaleType = {
+const es: PartialLocaleType = {
   WIP: "En construcción...",
   Error: {
     Unauthorized:
@@ -61,34 +61,20 @@ const es: LocaleType = {
   Settings: {
     Title: "Configuración",
     SubTitle: "Todas las configuraciones",
-    Actions: {
-      ClearAll: "Borrar todos los datos",
-      ResetAll: "Restablecer todas las configuraciones",
-      Close: "Cerrar",
-      ConfirmResetAll: "Are you sure you want to reset all configurations?",
-      ConfirmClearAll: "Are you sure you want to reset all chat?",
-    },
+
     Lang: {
       Name: "Language", // ATTENTION: if you wanna add a new translation, please do not translate this value, leave it as `Language`
       All: "Todos los idiomas",
-      Options: {
-        cn: "简体中文",
-        en: "English",
-        tw: "繁體中文",
-        es: "Español",
-        it: "Italiano",
-        tr: "Türkçe",
-        jp: "日本語",
-        de: "Deutsch",
-        vi: "Vietnamese",
-        ru: "Русский",
-        cs: "Čeština",
-      },
     },
     Avatar: "Avatar",
     FontSize: {
       Title: "Tamaño de fuente",
       SubTitle: "Ajustar el tamaño de fuente del contenido del chat",
+    },
+    InjectSystemPrompts: {
+      Title: "Inyectar Prompts del Sistema",
+      SubTitle:
+        "Agregar forzosamente un prompt de sistema simulado de ChatGPT al comienzo de la lista de mensajes en cada solicitud",
     },
     Update: {
       Version: (x: string) => `Versión: ${x}`,
@@ -106,8 +92,10 @@ const es: LocaleType = {
       SubTitle: "Preview markdown in bubble",
     },
     Mask: {
-      Title: "Mask Splash Screen",
-      SubTitle: "Show a mask splash screen before starting new chat",
+      Splash: {
+        Title: "Mask Splash Screen",
+        SubTitle: "Show a mask splash screen before starting new chat",
+      },
     },
     Prompt: {
       Disable: {
@@ -164,15 +152,20 @@ const es: LocaleType = {
       Title: "Máximo de tokens",
       SubTitle: "Longitud máxima de tokens de entrada y tokens generados",
     },
-    PresencePenlty: {
+    PresencePenalty: {
       Title: "Penalización de presencia",
       SubTitle:
         "Un valor mayor aumenta la probabilidad de hablar sobre nuevos temas",
     },
+    FrequencyPenalty: {
+      Title: "Penalización de frecuencia",
+      SubTitle:
+        "Un valor mayor que disminuye la probabilidad de repetir la misma línea",
+    },
   },
   Store: {
     DefaultTopic: "Nueva conversación",
-    BotHello: "Sitio web de ChatGPT por Xinxin<br>Ambos sitios web utilizan el mismo repositorio, por lo tanto, no se pueden mostrar mensajes por separado. Por favor, comprenda.<br>Si se encuentra en el sitio web de respaldo:<br>Este sitio web es solo para uso personal. Por favor, visite el [sitio web de prueba gratuito](https://free.gpt.xinxin2021.tk).<br>Si se encuentra en el sitio web de prueba gratuito:<br>Este servicio se basa en [ChatGPT-Next-Web](https://github.com/Hk-Gosuto/ChatGPT-Next-Web), modificado por [Hk-Gosuto](https://github.com/Hk-Gosuto) y desarrollado por [Yidadaa](https://github.com/Yidadaa). Ofrece funciones en línea adicionales en comparación con la versión original.<br>No puedo permitirme comprar el tutorial de múltiples claves del maestro, por lo tanto, he utilizado los tokens de compartición y de grupo de [pengzhile](https://github.com/pengzhile), lo que teóricamente permite el uso simultáneo de hasta 6 personas.<br>Cuentas y contraseñas de OpenAI reproducidas:<br>j.ale.ig.h.jphh.d.p97.10.9@gmail.com / qw2RuYz$tg1<br>s.ne.edi.dh.e99.3.20.9@gmail.com / srd5YFrw2*ch0<br>co.b.b.fawo.yj0.04.469@gmail.com / @uyHSzEEXZaz<br>stil.tn.er.jygo36.4.1@gmail.com / d%AMmeZpvNt<br>cob.bfa.woy.j.0.0.4.469@gmail.com / RQc!areDgNU<br>j.a.l.eig.h.jphh.dp97.1.0.9@gmail.com / 9H^Ez1b0wCB<br>Clave de API de OpenAI reproducida:<br>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 / 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 / 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 / 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 / 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 / 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",
+    BotHello: "¡Hola! ¿Cómo puedo ayudarte hoy?",
     Error: "Algo salió mal, por favor intenta nuevamente más tarde.",
     Prompt: {
       History: (content: string) =>
@@ -240,6 +233,12 @@ const es: LocaleType = {
     Close: "Close",
     Create: "Create",
     Edit: "Edit",
+  },
+  Exporter: {
+    Model: "Modelo",
+    Messages: "Mensajes",
+    Topic: "Tema",
+    Time: "Time",
   },
 };
 

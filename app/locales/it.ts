@@ -1,7 +1,7 @@
 import { SubmitKey } from "../store/config";
-import type { LocaleType } from "./index";
+import type { PartialLocaleType } from "./index";
 
-const it: LocaleType = {
+const it: PartialLocaleType = {
   WIP: "Work in progress...",
   Error: {
     Unauthorized:
@@ -61,34 +61,20 @@ const it: LocaleType = {
   Settings: {
     Title: "Impostazioni",
     SubTitle: "Tutte le impostazioni",
-    Actions: {
-      ClearAll: "Cancella tutti i dati",
-      ResetAll: "Resetta tutte le impostazioni",
-      Close: "Chiudi",
-      ConfirmResetAll: "Sei sicuro vuoi cancellare tutte le impostazioni?",
-      ConfirmClearAll: "Sei sicuro vuoi cancellare tutte le chat?",
-    },
+
     Lang: {
       Name: "Language", // ATTENTION: if you wanna add a new translation, please do not translate this value, leave it as `Language`
       All: "Tutte le lingue",
-      Options: {
-        cn: "简体中文",
-        en: "English",
-        tw: "繁體中文",
-        es: "Español",
-        it: "Italiano",
-        tr: "Türkçe",
-        jp: "日本語",
-        de: "Deutsch",
-        vi: "Vietnamese",
-        ru: "Русский",
-        cs: "Čeština",
-      },
     },
     Avatar: "Avatar",
     FontSize: {
       Title: "Dimensione carattere",
       SubTitle: "Regolare la dimensione dei caratteri del contenuto della chat",
+    },
+    InjectSystemPrompts: {
+      Title: "Inserisci Prompts di Sistema",
+      SubTitle:
+        "Aggiungi forzatamente un prompt di sistema simulato di ChatGPT all'inizio della lista dei messaggi per ogni richiesta",
     },
     Update: {
       Version: (x: string) => `Versione: ${x}`,
@@ -106,8 +92,10 @@ const it: LocaleType = {
       SubTitle: "Preview markdown in bubble",
     },
     Mask: {
-      Title: "Mask Splash Screen",
-      SubTitle: "Show a mask splash screen before starting new chat",
+      Splash: {
+        Title: "Mask Splash Screen",
+        SubTitle: "Show a mask splash screen before starting new chat",
+      },
     },
     Prompt: {
       Disable: {
@@ -165,15 +153,20 @@ const it: LocaleType = {
       Title: "Token massimi",
       SubTitle: "Lunghezza massima dei token in ingresso e dei token generati",
     },
-    PresencePenlty: {
+    PresencePenalty: {
       Title: "Penalità di presenza",
       SubTitle:
         "Un valore maggiore aumenta la probabilità di parlare di nuovi argomenti",
     },
+    FrequencyPenalty: {
+      Title: "Penalità di frequenza",
+      SubTitle:
+        "Un valore maggiore che diminuisce la probabilità di ripetere la stessa riga",
+    },
   },
   Store: {
     DefaultTopic: "Nuova conversazione",
-    BotHello: "Sito web di ChatGPT di Xinxin<br>Entrambi i siti utilizzano lo stesso repository, pertanto i messaggi non possono essere visualizzati separatamente. Ti prego di capire.<br>Se ti trovi nel sito di backup:<br>Questo sito è solo per uso personale. Per favore, visita il [sito di prova gratuito](https://free.gpt.xinxin2021.tk).<br>Se ti trovi nel sito di prova gratuito:<br>Questo servizio si basa su [ChatGPT-Next-Web](https://github.com/Hk-Gosuto/ChatGPT-Next-Web), modificato da [Hk-Gosuto](https://github.com/Hk-Gosuto) e realizzato da [Yidadaa](https://github.com/Yidadaa). Offre funzionalità online aggiuntive rispetto alla versione originale.<br>Non posso permettermi di acquistare il tutorial delle chiavi multiple del maestro, quindi ho utilizzato i token di condivisione e di gruppo di [pengzhile](https://github.com/pengzhile), il che teoricamente consente l'uso simultaneo di fino a 6 persone.<br>Account e password OpenAI riprodotti:<br>j.ale.ig.h.jphh.d.p97.10.9@gmail.com / qw2RuYz$tg1<br>s.ne.edi.dh.e99.3.20.9@gmail.com / srd5YFrw2*ch0<br>co.b.b.fawo.yj0.04.469@gmail.com / @uyHSzEEXZaz<br>stil.tn.er.jygo36.4.1@gmail.com / d%AMmeZpvNt<br>cob.bfa.woy.j.0.0.4.469@gmail.com / RQc!areDgNU<br>j.a.l.eig.h.jphh.dp97.1.0.9@gmail.com / 9H^Ez1b0wCB<br>Chiave API OpenAI riprodotta:<br>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 / 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 / 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 / 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 / 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 / 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",
+    BotHello: "Ciao, come posso aiutarti oggi?",
     Error: "Qualcosa è andato storto, riprova più tardi.",
     Prompt: {
       History: (content: string) =>
@@ -241,6 +234,12 @@ const it: LocaleType = {
     Close: "Close",
     Create: "Create",
     Edit: "Edit",
+  },
+  Exporter: {
+    Model: "Modello",
+    Messages: "Messaggi",
+    Topic: "Argomento",
+    Time: "Tempo",
   },
 };
 
